@@ -3,6 +3,14 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/PictureSelector.iml" filepath="$PROJECT_DIR$/PictureSelector.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/PictureSelector-app.iml" filepath="$PROJECT_DIR$/app/PictureSelector-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/picture_library/PictureSelector-picture_library.iml" filepath="$PROJECT_DIR$/picture_library/PictureSelector-picture_library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ucrop/PictureSelector-ucrop.iml" filepath="$PROJECT_DIR$/ucrop/PictureSelector-ucrop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SRC-PictureSelector.iml" filepath="$PROJECT_DIR$/SRC-PictureSelector.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/SRC-PictureSelector-app.iml" filepath="$PROJECT_DIR$/app/SRC-PictureSelector-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/picture_library/SRC-PictureSelector-picture_library.iml" filepath="$PROJECT_DIR$/picture_library/SRC-PictureSelector-picture_library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ucrop/SRC-PictureSelector-ucrop.iml" filepath="$PROJECT_DIR$/ucrop/SRC-PictureSelector-ucrop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Work-SRC-PictureSelector.iml" filepath="$PROJECT_DIR$/Work-SRC-PictureSelector.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/picture_library/picture_library.iml" filepath="$PROJECT_DIR$/picture_library/picture_library.iml" />
       <module fileurl="file://$PROJECT_DIR$/ucrop/ucrop.iml" filepath="$PROJECT_DIR$/ucrop/ucrop.iml" />
