@@ -11,6 +11,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.text.TextUtils;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentActivity;
@@ -50,6 +51,7 @@ import io.reactivex.schedulers.Schedulers;
  * @描述: Activity基类
  */
 public class PictureBaseActivity extends FragmentActivity {
+    private static final String TAG = PictureBaseActivity.class.getName();
     protected Context mContext;
     protected PictureSelectionConfig config;
     protected boolean openWhiteStatusBar, numComplete;
@@ -206,6 +208,7 @@ public class PictureBaseActivity extends FragmentActivity {
      * compressImage
      */
     protected void compressImage(final List<LocalMedia> result) {
+        Log.i(TAG,"compressImage()  synOrAsy:"+config.synOrAsy);
         showCompressDialog();
         if (config.synOrAsy) {
             Flowable.just(result)
@@ -350,6 +353,7 @@ public class PictureBaseActivity extends FragmentActivity {
      * @param file
      */
     protected void rotateImage(int degree, File file) {
+        Log.i(TAG,"rotateImage()");
         if (degree > 0) {
             // 针对相片有旋转问题的处理方式
             try {

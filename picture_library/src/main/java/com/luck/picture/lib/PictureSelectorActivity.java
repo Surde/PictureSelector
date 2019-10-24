@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.Animation;
@@ -883,6 +884,7 @@ public class PictureSelectorActivity extends PictureBaseActivity implements View
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        Log.i(TAG,"onActivityResult()");
         if (resultCode == RESULT_OK) {
             switch (requestCode) {
                 case UCrop.REQUEST_CROP:
@@ -915,6 +917,7 @@ public class PictureSelectorActivity extends PictureBaseActivity implements View
      * @param toType
      */
     private void cameraHandleResult(List<LocalMedia> medias, LocalMedia media, String toType) {
+        Log.i(TAG,"cameraHandleResult()");
         // 如果是单选 拍照后直接返回
         boolean eqImg = toType.startsWith(PictureConfig.IMAGE);
         if (config.enableCrop && eqImg) {
@@ -941,7 +944,6 @@ public class PictureSelectorActivity extends PictureBaseActivity implements View
      *
      * @param data
      */
-    @RequiresApi(api = Build.VERSION_CODES.O)
     private void requestCamera(Intent data) {
         List<LocalMedia> medias = new ArrayList<>();
         if (config.mimeType == PictureMimeType.ofAudio()) {
@@ -959,7 +961,10 @@ public class PictureSelectorActivity extends PictureBaseActivity implements View
             toType = PictureMimeType.fileToType(file);
         }
         if (config.mimeType != PictureMimeType.ofAudio()) {
-            int degree = PictureFileUtils.readPictureDegree(file.getAbsolutePath());
+            int degree = 0;
+            if (file.exists()) {
+                degree = PictureFileUtils.readPictureDegree(file.getAbsolutePath());
+            }
             rotateImage(degree, file);
         }
         // 生成新拍照片或视频对象
